@@ -1,3 +1,13 @@
+  < -- return unsafe_eval(c, globals_dict, locals_dict)
+  File "", line 7, in <module>
+  File "/opt/odoo_user/odoo-custom-addons/odoo-custom-addons/hr_novelty/models/hr_employee.py", line 378, in get_average_paid_annual_less_pay31
+    if self.entry_date.year == payslip.date_to.year and\
+ValueError: <class 'AttributeError'>: "'bool' object has no attribute 'year'" while evaluating
+'aux = 0\ntotal = 0\nif not payslip.pay_annual:\n  aux = employee.get_acumulate_month_before(payslip.date_from, "ACUM_PROV_CESANTIAS")\n  if payslip.date_to:\n    intcespag=0\n    prom=employee.get_average_paid_annual_less_pay31(payslip.date_from, payslip, (\'BASIC\', \'AUS\', \'AUSINC\', \'AUXTRANS\'))\n    days=employee.get_days_annual(payslip.date_to)\n    amount =prom/days*30\n    total =(amount*days)/360\nresult =employee.round1(total)'
+ERROR
+
+
+
 from dateutil.relativedelta import relativedelta
 import datetime
 from odoo import models, api, fields, _
